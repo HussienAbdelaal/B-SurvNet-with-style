@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Caminar by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 
 <head>
@@ -18,26 +13,26 @@
 
 <body>
 
-	<!-- Header -->
-	<header id="header">
-		<div class="logo"><a href="#">B-SurvNet <span>Call For Code</span></a></div>
+	<!-- The Send Supply pop up -->
+	<div id="mySendForm" class="modal">
 
-		<div class="form-popup" id="mySendForm">
-			<form class="form-container" id="send-form">
+		<!-- Modal Content -->
+		<form id="send-form" class="form-container modal-content animate" style="width: 75%; height: 800px;">
+			<div style="text-align: center;">
 				<h1>Disaster detected !</h1>
-				<h2>requested send supply transaction</h2>
+				<h2 style="margin-bottom: 20px">requested send supply transaction</h2>
 
-				<label for="disasterId"><b>Disaster Id</b></label> <!--Change it to be a dropdown-->
-				<select id="disaster-drop" name="disasterId"></select>
+				<label for="disasterId"><b>Disaster Id</b></label>
+				<select id="disaster-drop" name="disasterId" style="margin-bottom: 20px"></select>
 
 				<label for="receiverId"><b>Receiver Id</b></label>
-				<select id="receiver-drop" name="receiverId"></select>
+				<select id="receiver-drop" name="receiverId" style="margin-bottom: 20px"></select>
 
 				<label for="supplyId"><b>Supply Id</b></label>
-				<select id="supply-drop" name="supplyId"></select>
+				<select id="supply-drop" name="supplyId" style="margin-bottom: 20px"></select>
 
 				<label for="amount"><b>Supply Amount</b></label>
-				<select id="amount-drop" name="amount">
+				<select id="amount-drop" name="amount" style="margin-bottom: 20px">
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
@@ -49,13 +44,45 @@
 				</select>
 
 				<label for="deviceId"><b>Device Id</b></label>
-				<input type="text" placeholder="Enter device ID" name="deviceId" required>
+				<input type="text" placeholder="Enter device ID" name="deviceId" required style="margin-bottom: 20px">
 
 				<button type="submit" class="btn btn-report">Send Supply</button>
 				<button type="button" class="btn cancel" onclick="closeSendForm()">Reject</button>
-			</form>
-		</div>
+			</div>
 
+		</form>
+	</div>
+
+
+	<!-- The Report disaster pop up -->
+	<div id="myReportForm" class="modal">
+
+		<!-- Modal Content -->
+		<form id="report-form" class="form-container modal-content animate" style="width: 75%; height: 830px;">
+			<div style="text-align: center;">
+				<h1>Report Disaster</h1>
+
+				<label for="disasterId"><b>Disaster Id</b></label>
+				<input type="text" placeholder="Enter disaster ID" name="disasterId" required>
+
+				<label for="location"><b>Location</b></label>
+				<div id="report-map" style="width: 90%; height: 300px; margin:auto;"></div>
+				<input type="text" placeholder="Enter disaster location" name="location" required>
+
+				<label for="disasterType"><b>Disaster Type</b></label>
+				<input type="text" placeholder="Enter disaster type" name="disasterType" required>
+
+				<button type="submit" class="btn btn-report">Report</button>
+				<button type="button" class="btn cancel" onclick="closeReportForm()">Close</button>
+			</div>
+		</form>
+	</div>
+
+
+
+	<!-- Header -->
+	<header id="header">
+		<div class="logo"><a href="#">B-SurvNet <span>Call For Code</span></a></div>
 
 
 		<button type="button" onclick="openReportForm()" class="btn btn-outline-dark btn-lg report-open-button" style="
@@ -72,26 +99,6 @@
 				width: 636.6666px;
 			font-size:50px;font-weight:bold;">Dashboard</button></a>
 	</header>
-
-	<div class="form-popup" id="myReportForm">
-		<form class="form-container" id="report-form">
-			<h1>Report Disaster</h1>
-
-			<label for="disasterId"><b>Disaster Id</b></label>
-			<input type="text" placeholder="Enter disaster ID" name="disasterId" required>
-
-			<label for="location"><b>Location</b></label>
-			<div id="report-map" style="width: 90%; height: 300px; margin:auto;"></div>
-			<input type="text" placeholder="Enter disaster location" name="location" required>
-
-			<label for="disasterType"><b>Disaster Type</b></label>
-			<input type="text" placeholder="Enter disaster type" name="disasterType" required>
-
-			<button type="submit" class="btn btn-report">Report</button>
-			<button type="button" class="btn cancel" onclick="closeReportForm()">Close</button>
-		</form>
-	</div>
-
 
 	<!-- Main -->
 	<section id="main">
