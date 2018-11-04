@@ -232,7 +232,7 @@ function getReceiversFromReg() {
 
 function openSendForm(changed) {
     document.getElementById('mySendForm').style.display = 'block';
-    document.getElementById('mySendForm').style.zIndex = -1;
+    // document.getElementById('mySendForm').style.zIndex = -1;
 
     if (!changed)
         return;
